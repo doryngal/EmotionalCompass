@@ -1,0 +1,99 @@
+{
+  "good_state": {
+    "message": [{"text": "Отлично, давайте закрепим это состояние, чтобы оно сопровождало вас чаще."},
+      {"text": "Теперь важно определить, какие эмоции вы испытываете в данный момент.\n\nПожалуйста, выберите из списка ту, которая ближе всего вашему состоянию.\n\n\uD83D\uDC50 <i>Описания ко всем эмоциям доступны всем пользователям</i>."}
+    ],
+    "buttons": [
+      {"text": "🙂 Радость 💎", "next_state": "emotion_joy"},
+      {"text": "🥰 Любовь 💎", "next_state": "emotion_love"},
+      {"text": "🥰 Благодарность 💎", "next_state": "emotion_gratitude"},
+      {"text": "😌 Уважение 💎", "next_state": "emotion_respect"},
+      {"text": "😇 Забота 💎", "next_state": "emotion_care"},
+      {"text": "😀 Интерес 💎", "next_state": "emotion_interest"},
+      {"text": "😁 Удивление 💎", "next_state": "emotion_surprise"},
+      {"text": "Все эмоции", "next_state": "all_emotions"}
+    ]
+  },
+  "anxious_state": {
+    "message": [{"text": "Тревога может казаться сложной, но с ней можно работать."},
+      {"text": "Теперь важно определить, какие эмоции вы испытываете в данный момент.\n\nПожалуйста, выберите из списка ту, которая ближе всего вашему состоянию.\n\n\uD83D\uDC50 <i>Описания ко всем эмоциям доступны всем пользователям</i>."}
+    ],
+    "buttons": [
+      {"text": "😧 Беспокойство", "next_state": "emotion_worry"},
+      {"text": "😔 Грусть 💎", "next_state": "emotion_sadness"},
+      {"text": "😞 Вина 💎", "next_state": "emotion_guilt"},
+      {"text": "😓 Стыд 💎", "next_state": "emotion_shame"},
+      {"text": "😕 Отвращение 💎", "next_state": "emotion_disgust"},
+      {"text": "😒 Ревность 💎", "next_state": "emotion_jealousy"},
+      {"text": "😒 Зависть 💎", "next_state": "emotion_envy"},
+      {"text": "Все эмоции", "next_state": "all_emotions"}
+    ]
+  },
+  "annoyed_state": {
+    "message": [{"text": "Раздражение - это энергия, которую можно направить в конструктивное русло."},
+      {"text": "Теперь важно определить, какие эмоции вы испытываете в данный момент.\n\nПожалуйста, выберите из списка ту, которая ближе всего вашему состоянию.\n\n\uD83D\uDC50 <i>Описания ко всем эмоциям доступны всем пользователям</i>."}
+    ],
+    "buttons": [
+      {"text": "😧 Беспокойство", "next_state": "emotion_worry"},
+      {"text": "😠 Злость", "next_state": "emotion_anger"},
+      {"text": "😞 Разочарование 💎", "next_state": "emotion_disappointment"},
+      {"text": "😠 Раздражение 💎", "next_state": "emotion_irritation"},
+      {"text": "😞 Вина 💎", "next_state": "emotion_guilt"},
+      {"text": "😓 Стыд 💎", "next_state": "emotion_shame"},
+      {"text": "😕 Отвращение 💎", "next_state": "emotion_disgust"},
+      {"text": "😒 Ревность 💎", "next_state": "emotion_jealousy"},
+      {"text": "😒 Зависть 💎", "next_state": "emotion_envy"},
+      {"text": "Все эмоции", "next_state": "all_emotions"}
+    ]
+  },
+  "apathetic_state": {
+    "message": [{"text": "Усталость бывает у всех. Я покажу вам методы восстановления энергии."},
+      {"text": "Теперь важно определить, какие эмоции вы испытываете в данный момент.\n\nПожалуйста, выберите из списка ту, которая ближе всего вашему состоянию.\n\n\uD83D\uDC50 <i>Описания ко всем эмоциям доступны всем пользователям</i>."}
+    ],
+    "buttons": [
+      {"text": "😧 Беспокойство", "next_state": "emotion_worry"},
+      {"text": "😔 Грусть 💎", "next_state": "emotion_sadness"},
+      {"text": "😞 Вина 💎", "next_state": "emotion_guilt"},
+      {"text": "😓 Стыд 💎", "next_state": "emotion_shame"},
+      {"text": "🥺 Обида 💎", "next_state": "emotion_offense"},
+      {"text": "😕 Отвращение 💎", "next_state": "emotion_disgust"},
+      {"text": "😒 Ревность 💎", "next_state": "emotion_jealousy"},
+      {"text": "😒 Зависть 💎", "next_state": "emotion_envy"},
+      {"text": "Все эмоции", "next_state": "all_emotions"}
+    ]
+  },
+  "unclear_state": {
+    "message": [{"text": "Каждое наше состояние можно описать по двум ключевым параметрам:\n↔\uFE0F Насколько оно приятное? (по горизонтальной оси)\n↕\uFE0F Сколько у вас энергии? (по вертикальной оси)\n\n\uD83D\uDFE6 Если эмоция неприятная и энергии мало - это состояние истощения, усталости или апатии.\n\uD83D\uDFE5 Если эмоция неприятная, но энергии много - это напряжение, тревога или злость.\n\uD83D\uDFE8 Если эмоция приятная и энергии много - это радость, вдохновение, энтузиазм.\n\uD83D\uDFE9 Если эмоция приятная, но энергии мало - это расслабленность, спокойствие или удовлетворённость.\n\nПосмотрите на этот квадрат и определите, в каком состоянии вы сейчас находитесь."}],
+    "buttons": [
+      {"text": "Красный 🟥", "next_state": "red_zone"},
+      {"text": "Желтый 🟨", "next_state": "yellow_zone"},
+      {"text": "Синий 🟦", "next_state": "blue_zone"},
+      {"text": "Зеленый 🟩", "next_state": "green_zone"}
+    ],
+    "images": ["./images/state_square.png"]
+  },
+  "all_emotions": {
+    "message": [{"text": "Какую эмоцию ты хочешь исследовать?\n\n\uD83D\uDC50 <i>Описания всех эмоции доступны всем пользователям</i>."}],
+    "buttons": [
+      {"text": "😧 Беспокойство", "next_state": "emotion_worry"},
+      {"text": "😠 Злость", "next_state": "emotion_anger"},
+      {"text": "😠 Раздражение 💎", "next_state": "emotion_irritation"},
+      {"text": "😔 Грусть 💎", "next_state": "emotion_sadness"},
+      {"text": "😞 Вина 💎", "next_state": "emotion_guilt"},
+      {"text": "😓 Стыд 💎", "next_state": "emotion_shame"},
+      {"text": "😕 Отвращение 💎", "next_state": "emotion_disgust"},
+      {"text": "😞 Разочарование 💎", "next_state": "emotion_disappointment"},
+      {"text": "🥺 Обида 💎", "next_state": "emotion_offense"},
+      {"text": "😒 Ревность 💎", "next_state": "emotion_jealousy"},
+      {"text": "😒 Зависть 💎", "next_state": "emotion_envy"},
+      {"text": "🙂 Радость 💎", "next_state": "emotion_joy"},
+      {"text": "🥰 Любовь 💎", "next_state": "emotion_love"},
+      {"text": "🥰 Благодарность 💎", "next_state": "emotion_gratitude"},
+      {"text": "😌 Уважение 💎", "next_state": "emotion_respect"},
+      {"text": "😇 Забота 💎", "next_state": "emotion_care"},
+      {"text": "😀 Интерес 💎", "next_state": "emotion_interest"},
+      {"text": "😁 Удивление 💎", "next_state": "emotion_surprise"},
+      {"text": "Сложно понять свою эмоцию", "next_state": "unclear_state"}
+    ]
+  }
+}

@@ -1,8 +1,6 @@
 package telegram
 
-import (
-	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
-)
+import tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 
 type TelegramClient struct {
 	bot *tgbotapi.BotAPI
@@ -16,20 +14,26 @@ func NewTelegramClient(token string) (*TelegramClient, error) {
 	return &TelegramClient{bot: botAPI}, nil
 }
 
-func (c *TelegramClient) SendMessage(chatID int64, text string) error {
-	msg := tgbotapi.NewMessage(chatID, text)
-	_, err := c.bot.Send(msg)
-	return err
-}
-
 func (c *TelegramClient) GetUpdatesChan(u tgbotapi.UpdateConfig) tgbotapi.UpdatesChannel {
 	return c.bot.GetUpdatesChan(u)
 }
 
-func (c *TelegramClient) SendMessageWithMarkup(chatID int64, msg tgbotapi.MessageConfig) {
+func (c *TelegramClient) AnswerCallbackQuery(callbackID string) {
+	c.bot.Request(tgbotapi.CallbackConfig{CallbackQueryID: callbackID})
+}
+
+func (c *TelegramClient) SendHTMLMessage(chatID int64, text string) error {
+	msg := tgbotapi.NewMessage(chatID, text)
+	msg.ParseMode = "HTML"
+	_, err := c.bot.Send(msg)
+	return err
+}
+
+func (c *TelegramClient) SendMessageWithMarkup(msg tgbotapi.MessageConfig) {
 	c.bot.Send(msg)
 }
 
-func (c *TelegramClient) AnswerCallbackQuery(callbackID string) {
-	c.bot.Request(tgbotapi.CallbackConfig{CallbackQueryID: callbackID})
+func (c *TelegramClient) SendPhoto(photo tgbotapi.PhotoConfig) error {
+	_, err := c.bot.Send(photo)
+	return err
 }

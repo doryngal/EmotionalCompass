@@ -1,0 +1,11 @@
+{
+  "state_files": [
+    "./config/states/diaries.json",
+    "./config/states/emotions.json",
+    "./config/states/focus.json",
+    "./config/states/meditations.json",
+    "./config/states/payments.json",
+    "./config/states/start.json",
+    "./config/states/state.json"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "meditations": {
+    "message": [
+      {"text": "\uD83E\uDDD8\uD83C\uDFFB Выберите медитацию"}
+    ],
+    "buttons": [
+      {"text": "Медитация по эмоциям", "next_state": ""},
+      {"text": "Скоро новые медитации", "next_state": ""}
+    ]
+  }
+}
