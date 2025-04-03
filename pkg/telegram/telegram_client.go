@@ -18,8 +18,13 @@ func (c *TelegramClient) GetUpdatesChan(u tgbotapi.UpdateConfig) tgbotapi.Update
 	return c.bot.GetUpdatesChan(u)
 }
 
-func (c *TelegramClient) AnswerCallbackQuery(callbackID string) {
-	c.bot.Request(tgbotapi.CallbackConfig{CallbackQueryID: callbackID})
+func (c *TelegramClient) AnswerCallbackQuery(callbackID string, text ...string) {
+	cfg := tgbotapi.CallbackConfig{CallbackQueryID: callbackID}
+	if len(text) > 0 {
+		cfg.Text = text[0]
+		cfg.ShowAlert = true
+	}
+	c.bot.Request(cfg)
 }
 
 func (c *TelegramClient) SendHTMLMessage(chatID int64, text string) error {

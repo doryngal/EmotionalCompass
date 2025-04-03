@@ -27,8 +27,16 @@ type QuickReply struct {
 }
 
 type Button struct {
-	Text      string `json:"text"`
-	NextState string `json:"next_state"`
+	Text            string `json:"text"`
+	NextState       string `json:"next_state"`
+	RequiresPremium bool   `json:"requires_premium,omitempty"`
+	FallbackState   string `json:"fallback_state,omitempty"`
+}
+
+type User struct {
+	ID        int64
+	Username  string
+	IsPremium bool
 }
 
 type Config struct {
