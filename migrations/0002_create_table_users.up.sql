@@ -1,0 +1,5 @@
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username TEXT NOT NULL UNIQUE,
+    is_premium BOOLEAN DEFAULT FALSE
+);
