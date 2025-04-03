@@ -1,2 +1,9 @@
 telegram_bot_token: 7712232269:AAFOAIIMx8_CP-KrGIWk8fA8pLdDwlKooCc
-db_connection:
+
+database:
+  host: "localhost"
+  port: 5432
+  user: "postgres"
+  password: "349349"
+  database: "EmotionalCompass"
+  sslmode: "disable"

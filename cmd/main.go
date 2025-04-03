@@ -4,6 +4,7 @@ import (
 	"log"
 	"telegram-bot/internal/bot"
 	"telegram-bot/internal/config"
+	"telegram-bot/internal/database"
 	"telegram-bot/pkg/telegram"
 )
 
@@ -16,6 +17,14 @@ func main() {
 		log.Fatal("[ERROR] Ошибка загрузки конфигурации")
 	}
 	log.Println("[INFO] Конфигурация загружена успешно")
+
+	// Инициализация базы данных
+	db, err := database.InitDB(cfg.Database)
+	if err != nil {
+		log.Fatalf("[ERROR] Ошибка подключения к БД: %v", err)
+	}
+	defer db.Close()
+	bot.SetDatabase(db)
 
 	// Инициализация Telegram API.
 	botAPI, err := telegram.NewTelegramClient(cfg.TelegramBotToken)
