@@ -6,6 +6,8 @@ import (
 	"os"
 	"path/filepath"
 	"sync"
+	"telegram-bot/internal/config"
+	"telegram-bot/internal/database"
 	"telegram-bot/pkg/telegram"
 )
 
@@ -14,11 +16,16 @@ type MessagePart struct {
 	Sleep float64 `json:"sleep"`
 }
 
+type QuickReplyRow struct {
+	Buttons []QuickReply `json:"buttons"`
+}
+
 type State struct {
-	Message      []MessagePart `json:"message"`
-	Buttons      []Button      `json:"buttons"`
-	Images       []string      `json:"images"`
-	QuickReplies []QuickReply  `json:"quick_replies"`
+	Message      []MessagePart   `json:"message"`
+	Buttons      []Button        `json:"buttons"`
+	Images       []string        `json:"images"`
+	Audio        []string        `json:"audio"`
+	QuickReplies []QuickReplyRow `json:"quick_replies"` // Изменили на массив рядов
 }
 
 type QuickReply struct {
@@ -33,46 +40,43 @@ type Button struct {
 	FallbackState   string `json:"fallback_state,omitempty"`
 }
 
-type User struct {
-	ID        int64
-	Username  string
-	IsPremium bool
+type Bot struct {
+	API      *telegram.TelegramClient
+	DB       *database.DB
+	states   map[string]State
+	statesMu sync.RWMutex
 }
 
-type Config struct {
-	StateFiles []string `json:"state_files"`
+func NewBot(api *telegram.TelegramClient, db *database.DB) *Bot {
+	return &Bot{
+		API:    api,
+		DB:     db,
+		states: make(map[string]State),
+	}
 }
-
-var (
-	userStates = make(map[int64]string)
-	userData   = make(map[int64]map[string]string)
-
-	states     = make(map[string]State)
-	statesLock sync.RWMutex
-)
 
 // LoadConfig загружает основной конфиг
-func LoadConfig(configPath string) (*Config, error) {
+func (b *Bot) LoadConfig(configPath string) (*config.Config, error) {
 	file, err := os.ReadFile(configPath)
 	if err != nil {
 		return nil, err
 	}
 
-	var config Config
+	var config config.Config
 	err = json.Unmarshal(file, &config)
 	return &config, err
 }
 
 // LoadStates загружает все состояния из указанных файлов
-func LoadStates(config *Config) error {
-	statesLock.Lock()
-	defer statesLock.Unlock()
+func (b *Bot) LoadStates(config *config.Config) error {
+	b.statesMu.Lock()
+	defer b.statesMu.Unlock()
 
 	// Очищаем текущие состояния
-	states = make(map[string]State)
+	b.states = make(map[string]State)
 
 	// Загружаем каждый файл состояний
-	for _, filePath := range config.StateFiles {
+	for _, filePath := range config.Bot.StateFiles {
 		absPath, err := filepath.Abs(filePath)
 		if err != nil {
 			return err
@@ -90,7 +94,7 @@ func LoadStates(config *Config) error {
 
 		// Объединяем состояния
 		for k, v := range fileStates {
-			states[k] = v
+			b.states[k] = v
 		}
 	}
 
@@ -98,44 +102,77 @@ func LoadStates(config *Config) error {
 }
 
 // GetState безопасно возвращает состояние по ключу
-func GetState(key string) (State, bool) {
-	statesLock.RLock()
-	defer statesLock.RUnlock()
-	s, exists := states[key]
+func (b *Bot) GetState(key string) (State, bool) {
+	b.statesMu.RLock()
+	defer b.statesMu.RUnlock()
+	s, exists := b.states[key]
 	return s, exists
 }
 
-func StartBot(botAPI *telegram.TelegramClient) {
-	updates := botAPI.GetUpdatesChan(tgbotapi.NewUpdate(0))
+func (b *Bot) Start() {
+	updates := b.API.GetUpdatesChan(tgbotapi.NewUpdate(0))
 
 	for update := range updates {
 		if update.Message != nil {
-			handleMessage(botAPI, update.Message)
+			b.handleMessage(update.Message)
 		} else if update.CallbackQuery != nil {
-			HandleCallbackQuery(botAPI, update.CallbackQuery)
+			b.HandleCallbackQuery(update.CallbackQuery)
 		}
 	}
 }
-
-func handleMessage(botAPI *telegram.TelegramClient, message *tgbotapi.Message) {
+func (b *Bot) handleMessage(message *tgbotapi.Message) {
 	chatID := message.Chat.ID
+	username := message.From.UserName
 
-	for _, s := range states {
-		for _, btn := range s.QuickReplies {
-			if message.Text == btn.Text {
-				HandleState(botAPI, chatID, btn.NextState)
-				return
-			}
+	// Получаем или создаем пользователя
+	_, err := b.DB.GetOrCreateUser(chatID, username)
+	if err != nil {
+		b.API.SendHTMLMessage(chatID, "Ошибка обработки запроса. Попробуйте позже.")
+		return
+	}
+
+	// Проверяем команду /start
+	if message.IsCommand() && message.Command() == "start" {
+		if err := b.DB.SetUserState(chatID, "start"); err != nil {
+			b.API.SendHTMLMessage(chatID, "Ошибка обработки запроса. Попробуйте позже.")
+			return
+		}
+		b.HandleState(chatID, "start")
+		return
+	}
+
+	// Сначала проверяем все возможные quick replies
+	b.statesMu.RLock()
+	defer b.statesMu.RUnlock()
+
+	// Собираем все quick replies из всех состояний
+	var allQuickReplies []QuickReply
+	for _, state := range b.states {
+		for _, row := range state.QuickReplies {
+			allQuickReplies = append(allQuickReplies, row.Buttons...)
 		}
 	}
 
-	currentState, exists := userStates[chatID]
+	// Добавляем стандартные quick replies
+	allQuickReplies = append(allQuickReplies, []QuickReply{
+		{Text: "🫣 Галерея эмоций", NextState: "all_emotions"},
+		{Text: "📚 Дневники", NextState: "diaries"},
+		{Text: "🧘‍♂️ Медитации", NextState: "meditations"},
+		{Text: "Купить полный доступ 🚀", NextState: "buy_access"},
+	}...)
 
-	if !exists {
-		// Новый пользователь - начинаем диалог
-		userStates[chatID] = "start"
-		userData[chatID] = make(map[string]string)
-		HandleState(botAPI, chatID, "start")
+	// Проверяем, соответствует ли текст сообщения какой-либо quick reply
+	for _, btn := range allQuickReplies {
+		if message.Text == btn.Text {
+			b.HandleState(chatID, btn.NextState)
+			return
+		}
+	}
+
+	// Если quick reply не найдена, обрабатываем как обычное сообщение
+	currentState, err := b.DB.GetUserState(chatID)
+	if err != nil {
+		b.API.SendHTMLMessage(chatID, "Ошибка обработки запроса. Попробуйте позже.")
 		return
 	}
 
@@ -143,11 +180,17 @@ func handleMessage(botAPI *telegram.TelegramClient, message *tgbotapi.Message) {
 	switch currentState {
 	case "start":
 		// Сохраняем имя пользователя
-		userData[chatID]["Username"] = message.Text
-		userStates[chatID] = "user_name"
-		HandleState(botAPI, chatID, "user_name")
+		if err := b.DB.SetUserData(chatID, "Username", message.Text); err != nil {
+			b.API.SendHTMLMessage(chatID, "Ошибка сохранения данных. Попробуйте позже.")
+			return
+		}
+		if err := b.DB.SetUserState(chatID, "user_name"); err != nil {
+			b.API.SendHTMLMessage(chatID, "Ошибка обработки запроса. Попробуйте позже.")
+			return
+		}
+		b.HandleState(chatID, "user_name")
 	default:
 		// Для других состояний просто продолжаем диалог
-		HandleState(botAPI, chatID, currentState)
+		b.HandleState(chatID, currentState)
 	}
 }

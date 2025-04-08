@@ -1,0 +1,164 @@
+{
+  "self_help_worry": {
+    "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с беспокойством.\n\nЕсли вы еще не знакомы с темой беспокойства, рекомендую вернуться и подробнее изучить эту эмоцию."}],
+    "buttons": [
+      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_worry"},
+      {"text": "Медитация - визуализация", "next_state": "worry_meditation"},
+      {"text": "Работа с телом", "next_state": "body_techniques_worry"},
+      {"text": "О чем говорит Беспокойство", "next_state": "emotion_worry"}
+    ]
+  },
+  "self_help_anger": {
+    "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться со злостью.\n\nЕсли вы еще не знакомы с темой злости, рекомендую вернуться и подробнее изучить эту эмоцию."}],
+    "buttons": [
+      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_anger"},
+      {"text": "Медитация - визуализация", "next_state": "anger_meditation"},
+      {"text": "Работа с телом", "next_state": "body_techniques_anger"},
+      {"text": "О чем говорит Злость", "next_state": "emotion_anger"}
+    ]
+  },
+  "self_help_sadness": {
+    "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с грустью.\n\nЕсли вы еще не знакомы с темой грусти, рекомендую вернуться и подробнее изучить эту эмоцию."}],
+    "buttons": [
+      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_sadness"},
+      {"text": "Медитация - визуализация", "next_state": "sadness_meditation"},
+      {"text": "Работа с телом", "next_state": "body_techniques_sadness"},
+      {"text": "О чем говорит Грусть", "next_state": "emotion_sadness"}
+    ]
+  },
+  "self_help_guilt": {
+    "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с виной.\n\nЕсли вы еще не знакомы с темой вины, рекомендую вернуться и подробнее изучить эту эмоцию."}],
+    "buttons": [
+      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_guilt"},
+      {"text": "Медитация - визуализация", "next_state": "guilt_meditation"},
+      {"text": "Работа с телом", "next_state": "body_techniques_guilt"},
+      {"text": "О чем говорит Вина", "next_state": "emotion_guilt"}
+    ]
+  },
+  "self_help_shame": {
+    "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться со стыдом.\n\nЕсли вы еще не знакомы с темой стыда, рекомендую вернуться и подробнее изучить эту эмоцию."}],
+    "buttons": [
+      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_shame"},
+      {"text": "Медитация - визуализация", "next_state": "shame_meditation"},
+      {"text": "Работа с телом", "next_state": "body_techniques_shame"},
+      {"text": "О чем говорит Стыд", "next_state": "emotion_shame"}
+    ]
+  },
+  "self_help_disgust": {
+    "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с отвращением.\n\nЕсли вы еще не знакомы с темой отвращения, рекомендую вернуться и подробнее изучить эту эмоцию."}],
+    "buttons": [
+      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_disgust"},
+      {"text": "Медитация - визуализация", "next_state": "disgust_meditation"},
+      {"text": "Работа с телом", "next_state": "body_techniques_disgust"},
+      {"text": "О чем говорит Отвращение", "next_state": "emotion_disgust"}
+    ]
+  },
+  "self_help_envy": {
+    "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с завистью.\n\nЕсли вы еще не знакомы с темой зависти, рекомендую вернуться и подробнее изучить эту эмоцию."}],
+    "buttons": [
+      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_envy"},
+      {"text": "Медитация - визуализация", "next_state": "envy_meditation"},
+      {"text": "Работа с телом", "next_state": "body_techniques_envy"},
+      {"text": "О чем говорит Зависть", "next_state": "emotion_envy"}
+    ]
+  },
+  "self_help_jealousy": {
+    "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться со ревностью.\n\nЕсли вы еще не знакомы с темой ревности, рекомендую вернуться и подробнее изучить эту эмоцию."}],
+    "buttons": [
+      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_jealousy"},
+      {"text": "Медитация - визуализация", "next_state": "jealousy_meditation"},
+      {"text": "Работа с телом", "next_state": "body_techniques_jealousy"},
+      {"text": "О чем говорит Ревность", "next_state": "emotion_jealousy"}
+    ]
+  },
+  "self_help_joy": {
+    "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с радостью.\n\nЕсли вы еще не знакомы с темой радость, рекомендую вернуться и подробнее изучить эту эмоцию."}],
+    "buttons": [
+      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_joy"},
+      {"text": "Медитация - визуализация", "next_state": "joy_meditation"},
+      {"text": "Работа с телом", "next_state": "body_techniques_joy"},
+      {"text": "О чем говорит Радость", "next_state": "emotion_joy"}
+    ]
+  },
+  "self_help_love": {
+    "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с любовью.\n\nЕсли вы еще не знакомы с темой любовь, рекомендую вернуться и подробнее изучить эту эмоцию."}],
+    "buttons": [
+      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_love"},
+      {"text": "Медитация - визуализация", "next_state": "love_meditation"},
+      {"text": "Работа с телом", "next_state": "body_techniques_love"},
+      {"text": "О чем говорит Любовь", "next_state": "emotion_love"}
+    ]
+  },
+  "self_help_interest": {
+    "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с интересом.\n\nЕсли вы еще не знакомы с темой интереса, рекомендую вернуться и подробнее изучить эту эмоцию."}],
+    "buttons": [
+      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_interest"},
+      {"text": "Медитация - визуализация", "next_state": "interest_meditation"},
+      {"text": "Работа с телом", "next_state": "body_techniques_interest"},
+      {"text": "О чем говорит Интерес", "next_state": "emotion_interest"}
+    ]
+  },
+  "self_help_surprise": {
+    "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с удивлением.\n\nЕсли вы еще не знакомы с темой удивление, рекомендую вернуться и подробнее изучить эту эмоцию."}],
+    "buttons": [
+      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_surprise"},
+      {"text": "Медитация - визуализация", "next_state": "surprise_meditation"},
+      {"text": "Работа с телом", "next_state": "body_techniques_surprise"},
+      {"text": "О чем говорит Удивление", "next_state": "emotion_surprise"}
+    ]
+  },
+  "self_help_offense": {
+    "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с обидой.\n\nЕсли вы еще не знакомы с темой обиды, рекомендую вернуться и подробнее изучить эту эмоцию."}],
+    "buttons": [
+      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_offense"},
+      {"text": "Медитация - визуализация", "next_state": "offense_meditation"},
+      {"text": "Работа с телом", "next_state": "body_techniques_offense"},
+      {"text": "О чем говорит Обида", "next_state": "emotion_offense"}
+    ]
+  },
+  "self_help_irritation": {
+    "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с раздражением.\n\nЕсли вы еще не знакомы с темой раздражение, рекомендую вернуться и подробнее изучить эту эмоцию."}],
+    "buttons": [
+      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_irritation"},
+      {"text": "Медитация - визуализация", "next_state": "irritation_meditation"},
+      {"text": "Работа с телом", "next_state": "body_techniques_irritation"},
+      {"text": "О чем говорит Раздражение", "next_state": "emotion_irritation"}
+    ]
+  },
+  "self_help_disappointment": {
+    "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с разочарованием.\n\nЕсли вы еще не знакомы с темой разочарования, рекомендую вернуться и подробнее изучить эту эмоцию."}],
+    "buttons": [
+      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_disappointment"},
+      {"text": "Медитация - визуализация", "next_state": "disappointment_meditation"},
+      {"text": "Работа с телом", "next_state": "body_techniques_disappointment"},
+      {"text": "О чем говорит Разочарование", "next_state": "emotion_disappointment"}
+    ]
+  },
+  "self_help_gratitude": {
+    "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с благодарностью.\n\nЕсли вы еще не знакомы с темой благодарности, рекомендую вернуться и подробнее изучить эту эмоцию."}],
+    "buttons": [
+      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_gratitude"},
+      {"text": "Медитация - визуализация", "next_state": "gratitude_meditation"},
+      {"text": "Работа с телом", "next_state": "body_techniques_gratitude"},
+      {"text": "О чем говорит Благодарность", "next_state": "emotion_gratitude"}
+    ]
+  },
+  "self_help_respect": {
+    "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с уважением.\n\nЕсли вы еще не знакомы с темой уважения, рекомендую вернуться и подробнее изучить эту эмоцию."}],
+    "buttons": [
+      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_respect"},
+      {"text": "Медитация - визуализация", "next_state": "respect_meditation"},
+      {"text": "Работа с телом", "next_state": "body_techniques_respect"},
+      {"text": "О чем говорит Уважение", "next_state": "emotion_respect"}
+    ]
+  },
+  "self_help_care": {
+    "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с заботой.\n\nЕсли вы еще не знакомы с темой забота, рекомендую вернуться и подробнее изучить эту эмоцию."}],
+    "buttons": [
+      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_care"},
+      {"text": "Медитация - визуализация", "next_state": "care_meditation"},
+      {"text": "Работа с телом", "next_state": "body_techniques_care"},
+      {"text": "О чем говорит Забота", "next_state": "emotion_care"}
+    ]
+  }
+}

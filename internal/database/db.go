@@ -130,3 +130,17 @@ func (db *DB) GetMessages(userID int64) ([]Message, error) {
 	}
 	return messages, nil
 }
+
+// CheckUserPremium проверяет, есть ли у пользователя премиум подписка
+func (db *DB) CheckUserPremium(userID int64) (bool, error) {
+	var isPremium bool
+	err := db.QueryRow("SELECT is_premium FROM users WHERE id = $1", userID).Scan(&isPremium)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			// Пользователь не найден - считаем что без подписки
+			return false, nil
+		}
+		return false, err
+	}
+	return isPremium, nil
+}

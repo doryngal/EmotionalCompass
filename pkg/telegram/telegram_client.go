@@ -42,3 +42,8 @@ func (c *TelegramClient) SendPhoto(photo tgbotapi.PhotoConfig) error {
 	_, err := c.bot.Send(photo)
 	return err
 }
+
+func (c *TelegramClient) SendAudio(audio tgbotapi.AudioConfig) error {
+	_, err := c.bot.Send(audio)
+	return err
+}

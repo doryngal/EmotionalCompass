@@ -1,0 +1,200 @@
+{
+  "worry_meditation": {
+    "message": [
+      {"text": "Аудио медитации"},
+      {"sleep": 3, "text": "<i>Эта медитация помогает мягко снизить уровень тревоги, перенаправить беспокойство в конструктивное русло и обрести чувство внутренней стабильности.</i>"}
+    ],
+    "buttons": [
+      {"text": "Работа с телом", "next_state": "body_techniques_worry"},
+      {"text": "О чем говорит Беспокойство", "next_state": "emotion_worry"}
+    ],
+    "audio": ["./audio/Якорь в реальности (тревога).mp3"]
+  },
+  "anger_meditation": {
+    "message": [
+      {"text": "Аудио медитации"},
+      {"sleep": 3, "text": "<i>Эта медитация позволяет безопасно выразить злость, трансформируя ее в энергию для действий, здоровые границы и внутреннюю решимость.</i>"}
+    ],
+    "buttons": [
+      {"text": "Работа с телом", "next_state": "body_techniques_anger"},
+      {"text": "О чем говорит Злость", "next_state": "emotion_anger"}
+    ],
+    "audio": ["./audio/Злость.mp3"]
+  },
+  "sadness_meditation": {
+    "message": [
+      {"text": "Аудио медитации"},
+      {"sleep": 3, "text": "<i>Эта медитация создает пространство для проживания грусти, помогая принять потерю и открыться новым смыслам.</i>"}
+    ],
+    "buttons": [
+      {"text": "Работа с телом", "next_state": "body_techniques_sadness"},
+      {"text": "О чем говорит Грусть", "next_state": "emotion_sadness"}
+    ],
+    "audio": ["./audio/Грусть.mp3"]
+  },
+  "guilt_meditation": {
+    "message": [
+      {"text": "Аудио медитации"},
+      {"sleep": 3, "text": "<i>Эта медитация помогает различать здоровую и токсичную вину, трансформируя ее в осознанность и возможность исправления ошибок.</i>"}
+    ],
+    "buttons": [
+      {"text": "Работа с телом", "next_state": "body_techniques_guilt"},
+      {"text": "О чем говорит Вина", "next_state": "emotion_guilt"}
+    ],
+    "audio": ["./audio/Вина_2.mp3"]
+  },
+  "shame_meditation": {
+    "message": [
+      {"text": "Аудио медитации"},
+      {"sleep": 3, "text": "<i>Эта медитация мягко снижает интенсивность стыда, помогая отделить себя от поступка и восстановить самоценность.</i>"}
+    ],
+    "buttons": [
+      {"text": "Работа с телом", "next_state": "body_techniques_shame"},
+      {"text": "О чем говорит Стыд", "next_state": "emotion_shame"}
+    ],
+    "audio": ["./audio/Стыд.mp3"]
+  },
+  "disgust_meditation": {
+    "message": [
+      {"text": "Аудио медитации"},
+      {"sleep": 3, "text": "<i>Эта медитация помогает осознать границы неприятия, трансформируя отвращение в здоровые защитные механизмы.</i>"}
+    ],
+    "buttons": [
+      {"text": "Работа с телом", "next_state": "body_techniques_disgust"},
+      {"text": "О чем говорит Отвращение", "next_state": "emotion_disgust"}
+    ],
+    "audio": ["./audio/Отвращение.mp3"]
+  },
+  "envy_meditation": {
+    "message": [
+      {"text": "Аудио медитации"},
+      {"sleep": 3, "text": "<i>Эта медитация раскрывает скрытые желания за завистью, помогая перенаправить ее в мотивацию для личного роста.</i>"}
+    ],
+    "buttons": [
+      {"text": "Работа с телом", "next_state": "body_techniques_envy"},
+      {"text": "О чем говорит Зависть", "next_state": "emotion_envy"}
+    ],
+    "audio": ["./audio/Зависть.mp3"]
+  },
+  "jealousy_meditation": {
+    "message": [
+      {"text": "Аудио медитации"},
+      {"sleep": 3, "text": "<i>Эта медитация помогает осознать глубинные страхи за ревностью, трансформируя ее в заботу о значимых отношениях.</i>"}
+    ],
+    "buttons": [
+      {"text": "Работа с телом", "next_state": "body_techniques_jealousy"},
+      {"text": "О чем говорит Ревность", "next_state": "emotion_jealousy"}
+    ],
+    "audio": ["./audio/Якорь в реальности (тревога).mp3"]
+  },
+  "joy_meditation": {
+    "message": [
+      {"text": "Аудио медитации"},
+      {"sleep": 3, "text": "<i>Эта медитация усиливает переживание радости, помогая глубже ощущать моменты счастья и делиться ими с миром.</i>"}
+    ],
+    "buttons": [
+      {"text": "Работа с телом", "next_state": "body_techniques_joy"},
+      {"text": "О чем говорит Радость", "next_state": "emotion_joy"}
+    ],
+    "audio": ["./audio/Радость.mp3"]
+  },
+  "love_meditation": {
+    "message": [
+      {"text": "Аудио медитации"},
+      {"sleep": 3, "text": "<i>Эта медитация углубляет чувство любви, помогая проявлять ее осознанно и экологично в отношениях с собой и другими.</i>"}
+    ],
+    "buttons": [
+      {"text": "Работа с телом", "next_state": "body_techniques_love"},
+      {"text": "О чем говорит Любовь", "next_state": "emotion_love"}
+    ],
+    "audio": ["./audio/Любовь.mp3"]
+  },
+  "interest_meditation": {
+    "message": [
+      {"text": "Аудио медитации"},
+      {"sleep": 3, "text": "<i>Эта медитация усиливает состояние заинтересованности, помогая направлять внимание на значимые аспекты жизни.</i>"}
+    ],
+    "buttons": [
+      {"text": "Работа с телом", "next_state": "body_techniques_interest"},
+      {"text": "О чем говорит Интерес", "next_state": "emotion_interest"}
+    ],
+    "audio": ["./audio/Интерес.mp3"]
+  },
+  "surprise_meditation": {
+    "message": [
+      {"text": "Аудио медитации"},
+      {"sleep": 3, "text": "<i>Эта медитация помогает интегрировать неожиданные события, превращая удивление в источник новых возможностей.</i>"}
+    ],
+    "buttons": [
+      {"text": "Работа с телом", "next_state": "body_techniques_surprise"},
+      {"text": "О чем говорит Удивление", "next_state": "emotion_surprise"}
+    ],
+    "audio": ["./audio/Удивление.mp3"]
+  },
+  "offense_meditation": {
+    "message": [
+      {"text": "Аудио медитации"},
+      {"sleep": 3, "text": "<i>Эта медитация помогает осознать глубинные ожидания за обидой, трансформируя ее в понимание своих границ.</i>"}
+    ],
+    "buttons": [
+      {"text": "Работа с телом", "next_state": "body_techniques_offense"},
+      {"text": "О чем говорит Обида", "next_state": "emotion_offense"}
+    ],
+    "audio": ["./audio/Отпускание ожиданий (обида).mp3"]
+  },
+  "irritation_meditation": {
+    "message": [
+      {"text": "Аудио медитации"},
+      {"sleep": 3, "text": "<i>Эта медитация снижает интенсивность раздражения, помогая распознать его истинные причины и экологично выражать.</i>"}
+    ],
+    "buttons": [
+      {"text": "Работа с телом", "next_state": "body_techniques_irritation"},
+      {"text": "О чем говорит Раздражение", "next_state": "emotion_irritation"}
+    ],
+    "audio": ["./audio/Перенаправление_энергии_раздражение.mp3"]
+  },
+  "disappointment_meditation": {
+    "message": [
+      {"text": "Аудио медитации"},
+      {"sleep": 3, "text": "<i>Эта медитация помогает принять разочарование, трансформируя его в переосмысление ожиданий и новых возможностей.</i>"}
+    ],
+    "buttons": [
+      {"text": "Работа с телом", "next_state": "body_techniques_disappointment"},
+      {"text": "О чем говорит Разочарование", "next_state": "emotion_disappointment"}
+    ],
+    "audio": ["./audio/Раздвижение_перспектив_разочарование.mp3"]
+  },
+  "gratitude_meditation": {
+    "message": [
+      {"text": "Аудио медитации"},
+      {"sleep": 3, "text": "<i>Эта медитация углубляет чувство благодарности, помогая замечать ценность каждого момента и отношений.</i>"}
+    ],
+    "buttons": [
+      {"text": "Работа с телом", "next_state": "body_techniques_gratitude"},
+      {"text": "О чем говорит Благодарность", "next_state": "emotion_gratitude"}
+    ],
+    "audio": ["./audio/gratitude_meditation.mp3"]
+  },
+  "respect_meditation": {
+    "message": [
+      {"text": "Аудио медитации"},
+      {"sleep": 3, "text": "<i>Эта медитация усиливает чувство уважения, помогая осознавать ценность себя и других без условий.</i>"}
+    ],
+    "buttons": [
+      {"text": "Работа с телом", "next_state": "body_techniques_respect"},
+      {"text": "О чем говорит Уважение", "next_state": "emotion_respect"}
+    ],
+    "audio": ["./audio/respect_meditation.mp3"]
+  },
+  "care_meditation": {
+    "message": [
+      {"text": "Аудио медитации"},
+      {"sleep": 3, "text": "<i>Эта медитация усиливает способность к заботе, помогая находить баланс между вниманием к другим и самообслуживанием.</i>"}
+    ],
+    "buttons": [
+      {"text": "Работа с телом", "next_state": "body_techniques_care"},
+      {"text": "О чем говорит Забота", "next_state": "emotion_care"}
+    ],
+    "audio": ["./audio/Я есть и это нормально (смущение).mp3"]
+  }
+}

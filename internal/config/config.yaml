@@ -1,4 +1,5 @@
-telegram_bot_token: 7712232269:AAFOAIIMx8_CP-KrGIWk8fA8pLdDwlKooCc
+telegram:
+  token: 7712232269:AAFOAIIMx8_CP-KrGIWk8fA8pLdDwlKooCc
 
 database:
   host: "localhost"
@@ -7,3 +8,22 @@ database:
   password: "349349"
   database: "EmotionalCompass"
   sslmode: "disable"
+
+bot:
+  state_files:
+    - "./config/states/color_zone.json"
+    - "./config/states/diaries.json"
+    - "./config/states/emotion_body_reactions.json"
+    - "./config/states/emotion_body_techniques.json"
+    - "./config/states/emotion_features.json"
+    - "./config/states/emotion_meditations.json"
+    - "./config/states/emotion_shades.json"
+    - "./config/states/emotional_cognitive_techniques.json"
+    - "./config/states/emotional_self_help.json"
+    - "./config/states/emotions.json"
+    - "./config/states/emotions_limited.json"
+    - "./config/states/focus.json"
+    - "./config/states/meditations.json"
+    - "./config/states/payments.json"
+    - "./config/states/start.json"
+    - "./config/states/state.json"

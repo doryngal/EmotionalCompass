@@ -4,8 +4,38 @@
       {"text": "\uD83E\uDDD8\uD83C\uDFFB Выберите медитацию"}
     ],
     "buttons": [
-      {"text": "Медитация по эмоциям", "next_state": ""},
-      {"text": "Скоро новые медитации", "next_state": ""}
+      {"text": "Медитация по эмоциям", "next_state": "meditation_menu"}
+    ]
+  },
+  "meditation_menu": {
+    "message": [
+      {"text": "Выберите медитацию, которая подходит вашему состоянию.\n\nКакие эмоции вы чувствуете в данный момент?\n\n\uD83D\uDC50 <i>Описания всех эмоции доступны всем пользователям</i>."}
+    ],
+    "buttons": [
+      {"text": "\uD83D\uDE27 Беспокойство", "next_state": "worry_meditation"},
+      {"text": "😠 Злость", "next_state": "anger_meditation"},
+      {"text": "😠 Раздражение", "next_state": "irritation_meditation", "requires_premium": true, "fallback_state": "meditations_limited"},
+      {"text": "😔 Грусть", "next_state": "sadness_meditation", "requires_premium": true, "fallback_state": "meditations_limited"},
+      {"text": "😞 Вина", "next_state": "guilt_meditation", "requires_premium": true, "fallback_state": "meditations_limited"},
+      {"text": "😓 Стыд", "next_state": "shame_meditation", "requires_premium": true, "fallback_state": "meditations_limited"},
+      {"text": "😕 Отвращение", "next_state": "disgust_meditation", "requires_premium": true, "fallback_state": "meditations_limited"},
+      {"text": "😞 Разочарование", "next_state": "disappointment_meditation", "requires_premium": true, "fallback_state": "meditations_limited"},
+      {"text": "🥺 Обида", "next_state": "offense_meditation", "requires_premium": true, "fallback_state": "meditations_limited"},
+      {"text": "😒 Ревность", "next_state": "jealousy_meditation", "requires_premium": true, "fallback_state": "meditations_limited"},
+      {"text": "😒 Зависть", "next_state": "envy_meditation", "requires_premium": true, "fallback_state": "meditations_limited"},
+      {"text": "🙂 Радость", "next_state": "joy_meditation", "requires_premium": true, "fallback_state": "meditations_limited"},
+      {"text": "🥰 Любовь", "next_state": "love_meditation", "requires_premium": true, "fallback_state": "meditations_limited"},
+      {"text": "🥰 Благодарность", "next_state": "gratitude_meditation", "requires_premium": true, "fallback_state": "meditations_limited"},
+      {"text": "😌 Уважение", "next_state": "respect_meditation", "requires_premium": true, "fallback_state": "meditations_limited"},
+      {"text": "😇 Забота", "next_state": "care_meditation", "requires_premium": true, "fallback_state": "meditations_limited"},
+      {"text": "😀 Интерес", "next_state": "interest_meditation", "requires_premium": true, "fallback_state": "meditations_limited"},
+      {"text": "😁 Удивление", "next_state": "surprise_meditation", "requires_premium": true, "fallback_state": "meditations_limited"},
+      {"text": "Сложно понять свою эмоцию", "next_state": "unclear_state"}
+    ]
+  },
+  "meditations_limited": {
+    "message": [
+      {"text": "☹\uFE0F  Упс.. \n\n\uD83D\uDD13 Вы сейчас используете бесплатную версию «Компас эмоций».\n\nОна даёт доступ к ограниченному числу эмоций и техник, но полный функционал бота ещё впереди.\n\n\uD83D\uDCA1 Хотите получить доступ ко всем эмоциям, практикам и дневникам?\n\n\uD83C\uDF1F Полная версия бота – всего 1990 тг! \uD83C\uDF1F\n\n\uD83D\uDCCC Покупая полную версию, вы поддерживаете важный проект по развитию эмоциональной грамотности.\n\nВы можете также просто поделиться ботом с друзьями или в соцсетях.\n\n\uD83D\uDC9B Ваша поддержка делает этот проект возможным!"}
     ]
   }
 }
