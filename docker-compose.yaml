@@ -5,15 +5,29 @@ services:
     build: .
     environment:
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
-      - DB_CONNECTION=${DB_CONNECTION}
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - STATE_FILES_PATH=/app/config/states
     depends_on:
       - db
+    volumes:
+      - ./internal/config:/app/internal/config  # Копируем конфигурацию
+      - ./config/states:/app/config/states
+    command: ["./bot"]  # Твой скомпилированный бинарник
 
   db:
     image: postgres:13
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: bot_db
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
     ports:
       - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Сохраняем данные между перезапусками
+
+volumes:
+  postgres_data:  # Псевдоним для volume

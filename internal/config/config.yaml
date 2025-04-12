@@ -2,7 +2,7 @@ telegram:
   token: 7712232269:AAFOAIIMx8_CP-KrGIWk8fA8pLdDwlKooCc
 
 database:
-  host: "localhost"
+  host: "db"
   port: 5432
   user: "postgres"
   password: "349349"
@@ -11,19 +11,19 @@ database:
 
 bot:
   state_files:
-    - "./config/states/color_zone.json"
-    - "./config/states/diaries.json"
-    - "./config/states/emotion_body_reactions.json"
-    - "./config/states/emotion_body_techniques.json"
-    - "./config/states/emotion_features.json"
-    - "./config/states/emotion_meditations.json"
-    - "./config/states/emotion_shades.json"
-    - "./config/states/emotional_cognitive_techniques.json"
-    - "./config/states/emotional_self_help.json"
-    - "./config/states/emotions.json"
-    - "./config/states/emotions_limited.json"
-    - "./config/states/focus.json"
-    - "./config/states/meditations.json"
-    - "./config/states/payments.json"
-    - "./config/states/start.json"
-    - "./config/states/state.json"
+    - "${STATE_FILES_PATH}/color_zone.json"
+    - "${STATE_FILES_PATH}/diaries.json"
+    - "${STATE_FILES_PATH}/emotion_body_reactions.json"
+    - "${STATE_FILES_PATH}/emotion_body_techniques.json"
+    - "${STATE_FILES_PATH}/emotion_features.json"
+    - "${STATE_FILES_PATH}/emotion_meditations.json"
+    - "${STATE_FILES_PATH}/emotion_shades.json"
+    - "${STATE_FILES_PATH}/emotional_cognitive_techniques.json"
+    - "${STATE_FILES_PATH}/emotional_self_help.json"
+    - "${STATE_FILES_PATH}/emotions.json"
+    - "${STATE_FILES_PATH}/emotions_limited.json"
+    - "${STATE_FILES_PATH}/focus.json"
+    - "${STATE_FILES_PATH}/meditations.json"
+    - "${STATE_FILES_PATH}/payments.json"
+    - "${STATE_FILES_PATH}/start.json"
+    - "${STATE_FILES_PATH}/state.json"
