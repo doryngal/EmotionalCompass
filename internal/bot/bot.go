@@ -155,7 +155,7 @@ func (b *Bot) handleMessage(message *tgbotapi.Message) {
 
 	// Добавляем стандартные quick replies
 	allQuickReplies = append(allQuickReplies, []QuickReply{
-		{Text: "🫣 Галерея эмоций", NextState: "all_emotions"},
+		{Text: "🧰 Галерея эмоций", NextState: "all_emotions"},
 		{Text: "📚 Дневники", NextState: "diaries"},
 		{Text: "🧘‍♂️ Медитации", NextState: "meditations"},
 		{Text: "Купить полный доступ 🚀", NextState: "buy_access"},

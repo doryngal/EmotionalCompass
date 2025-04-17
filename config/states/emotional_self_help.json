@@ -101,7 +101,6 @@
   "self_help_surprise": {
     "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с удивлением.\n\nЕсли вы еще не знакомы с темой удивление, рекомендую вернуться и подробнее изучить эту эмоцию."}],
     "buttons": [
-      {"text": "Работа с мыслями", "next_state": "cognitive_techniques_surprise"},
       {"text": "Медитация - визуализация", "next_state": "surprise_meditation"},
       {"text": "Работа с телом", "next_state": "body_techniques_surprise"},
       {"text": "О чем говорит Удивление", "next_state": "emotion_surprise"}
@@ -138,7 +137,6 @@
     "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с благодарностью.\n\nЕсли вы еще не знакомы с темой благодарности, рекомендую вернуться и подробнее изучить эту эмоцию."}],
     "buttons": [
       {"text": "Работа с мыслями", "next_state": "cognitive_techniques_gratitude"},
-      {"text": "Медитация - визуализация", "next_state": "gratitude_meditation"},
       {"text": "Работа с телом", "next_state": "body_techniques_gratitude"},
       {"text": "О чем говорит Благодарность", "next_state": "emotion_gratitude"}
     ]
@@ -147,7 +145,6 @@
     "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с уважением.\n\nЕсли вы еще не знакомы с темой уважения, рекомендую вернуться и подробнее изучить эту эмоцию."}],
     "buttons": [
       {"text": "Работа с мыслями", "next_state": "cognitive_techniques_respect"},
-      {"text": "Медитация - визуализация", "next_state": "respect_meditation"},
       {"text": "Работа с телом", "next_state": "body_techniques_respect"},
       {"text": "О чем говорит Уважение", "next_state": "emotion_respect"}
     ]
@@ -156,7 +153,6 @@
     "message": [{"text": "⬇\uFE0E Выбери технику самопомощи, которая поможет справиться с заботой.\n\nЕсли вы еще не знакомы с темой забота, рекомендую вернуться и подробнее изучить эту эмоцию."}],
     "buttons": [
       {"text": "Работа с мыслями", "next_state": "cognitive_techniques_care"},
-      {"text": "Медитация - визуализация", "next_state": "care_meditation"},
       {"text": "Работа с телом", "next_state": "body_techniques_care"},
       {"text": "О чем говорит Забота", "next_state": "emotion_care"}
     ]

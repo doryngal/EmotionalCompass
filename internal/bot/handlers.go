@@ -12,6 +12,7 @@ import (
 // HandleState отправляет сообщения с проверкой подписки
 func (b *Bot) HandleState(chatID int64, state string) {
 	s, exists := b.GetState(state)
+	fmt.Println(state)
 	if !exists {
 		b.API.SendHTMLMessage(chatID, "Неизвестное состояние. Попробуйте снова.")
 		return
@@ -74,7 +75,7 @@ func (b *Bot) HandleState(chatID int64, state string) {
 			quickReplies = []QuickReplyRow{
 				{
 					Buttons: []QuickReply{
-						{Text: "🫣 Галерея эмоций", NextState: "all_emotions"},
+						{Text: "🧰 Галерея эмоций", NextState: "all_emotions"},
 					},
 				},
 				{
