@@ -45,7 +45,7 @@ func LoadConfig(path string) (*Config, error) {
 		config.Telegram.Token = os.Getenv("TELEGRAM_BOT_TOKEN")
 		config.Database = DatabaseConfig{
 			Host:     os.Getenv("DB_HOST"),
-			Port:     getEnvAsInt("DB_PORT", 5432),
+			Port:     getEnvAsInt("DB_PORT", 5433),
 			User:     os.Getenv("DB_USER"),
 			Password: os.Getenv("DB_PASSWORD"),
 			Database: os.Getenv("DB_NAME"),
