@@ -16,7 +16,7 @@ services:
     volumes:
       - ./app/internal/config:/app/internal/config
       - ./app/config/states:/app/config/states
-    command: ["./bot"]
+    entrypoint: ["/wait-for-it.sh", "db:5432", "--timeout=30", "--strict", "--", "./bot"]
 
   db:
     image: postgres:13
