@@ -12,7 +12,7 @@ func main() {
 	log.Println("[INFO] Запуск бота...")
 
 	// Загрузка конфигурации.
-	cfg, err := config.LoadConfig("./internal/config/config.yaml")
+	cfg, err := config.LoadConfig("./app/internal/config/config.yaml")
 	if err != nil {
 		log.Fatal("[ERROR] Ошибка загрузки конфигурации: ", err)
 	}
