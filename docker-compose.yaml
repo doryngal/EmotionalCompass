@@ -14,8 +14,8 @@ services:
     depends_on:
       - db
     volumes:
-      - ./internal/config:/app/internal/config
-      - ./config/states:/app/config/states
+      - ./app/internal/config:/app/internal/config
+      - ./app/config/states:/app/config/states
     command: ["./bot"]
 
   db:
